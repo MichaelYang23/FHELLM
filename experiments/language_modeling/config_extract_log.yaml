@@ -1,0 +1,11 @@
+# log_dir: ./logix_logs/gpt2_random_raw_mlp
+# LoRA configurations
+lora:
+  init: random
+  rank: 8
+
+# Influence configurations
+influence:
+  damping: 1.0e-5
+  mode: dot
+  flatten: true

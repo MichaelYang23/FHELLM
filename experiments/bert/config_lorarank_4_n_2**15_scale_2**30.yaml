@@ -1,0 +1,18 @@
+# LoRA configurations
+lora:
+  init: random
+  rank: 4
+
+# Influence configurations
+influence:
+  damping: 1.0e-5
+  relative_damping: false
+  mode: dot
+  flatten: true
+
+# FHE configurations (NEW SECTION)
+fhe:
+  scheme: CKKS
+  n: 32768        # 2**15 = 32768
+  scale: 1073741824 # 2**30
+  qi_sizes: [60, 30, 30, 30, 60]
