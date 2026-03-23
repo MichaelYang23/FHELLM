@@ -13,19 +13,6 @@ cd experiments/minimal_replication
 
 This self-contained script trains a small MLP on MNIST digits {1, 2}, treats digits {1, 2, 3} as three data sellers, computes plaintext influence scores, verifies them under CKKS encryption, and confirms that the encrypted rankings match the actual utility (measured by fine-tuning). Expected output: a comparison table showing near-perfect agreement between plaintext IF, encrypted IF, and ground-truth benefit.
 
-## Repository Structure
-
-```
-logix/                          Core library (influence functions + FHE engine)
-experiments/
-  minimal_replication/          Self-contained FHE-IF proof-of-concept (start here)
-  mnist/                        MLP on MNIST (Sec. 4.1)
-  bert/                         BERT on SST-2 (Sec. 4.2)
-  language_modeling/            GPT-2 on WikiText-2 (Sec. 4.3)
-  Market_demo/                  Causal validity: 3-seller MNIST market (Sec. 5)
-  Market_demo_hospital/         Healthcare data market simulation (Sec. 5)
-  Market_demo_book/             Book data market simulation (Sec. 5)
-```
 
 ## Experiments
 
