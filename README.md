@@ -1,21 +1,14 @@
 # Sell Data to AI Algorithms Without Revealing It
 
-This repository contains the code for replicating the experiments in:
 
-> Michael Yang, Ruijiang Gao, Zhiqiang (Eric) Zheng
->
-> **[Sell Data to AI Algorithms Without Revealing It: Secure Data Valuation and Sharing via Homomorphic Encryption](https://arxiv.org/abs/2512.06033)**
-
-We introduce the **Trustworthy Influence Protocol (TIP)**, a privacy-preserving framework that enables data buyers to quantify the utility of external data *without ever seeing the raw assets*. TIP integrates Fully Homomorphic Encryption (CKKS) with gradient-based influence functions, built on top of the [LogIX](https://github.com/logix-project/logix) library for scalable gradient logging and Hessian approximation, allowing precise, blind scoring of data against a buyer's specific AI model.
+**Trustworthy Influence Protocol (TIP)** is a privacy-preserving framework that enables data buyers to quantify the utility of external data *without ever seeing the raw assets*. TIP integrates Fully Homomorphic Encryption (CKKS) with gradient-based influence functions, built on top of the [LogIX](https://github.com/logix-project/logix) library for scalable gradient logging and Hessian approximation, allowing precise, blind scoring of data against a buyer's specific AI model.
 
 ## Quick Start: Minimal Replication
 
-The fastest way to verify the TIP is through our minimal replication:
+The fastest way to verify the TIP is through our minimal replication located at:
 
 ```bash
-pip install torch torchvision pyfhel numpy
 cd experiments/minimal_replication
-bash run.sh
 ```
 
 This self-contained script trains a small MLP on MNIST digits {1, 2}, treats digits {1, 2, 3} as three data sellers, computes plaintext influence scores, verifies them under CKKS encryption, and confirms that the encrypted rankings match the actual utility (measured by fine-tuning). Expected output: a comparison table showing near-perfect agreement between plaintext IF, encrypted IF, and ground-truth benefit.
